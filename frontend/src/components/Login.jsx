@@ -1,9 +1,10 @@
 
 const Login = () => {
 return (
-    <>
-        <h2>Esta es la pagina de Login</h2>
-    </>
+    
+    <div>
+        <h2>Esta es la pagina de login</h2>
+    </div>
 )
 }
 

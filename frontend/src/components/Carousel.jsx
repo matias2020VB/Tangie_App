@@ -1,7 +1,12 @@
 import React from 'react';
+import './carousel.css';
 import foto1 from '../images/foto1_carousel.jpg';
 import foto2 from '../images/foto2_carousel.jpeg';
 import foto3 from '../images/foto3_carousel.png';
+
+
+
+
 
 const Carousel = () => {
     return (

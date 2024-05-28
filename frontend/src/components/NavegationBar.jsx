@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const NavegationBar = () => {
     return (
-        <>
+        <>  
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="#"><img src={require(`../images/photo2.jpeg`)} alt="" width="100px" height="80px"/></a>
@@ -14,6 +14,8 @@ const NavegationBar = () => {
                         <ul class="navbar-nav mx-auto">
 
                             <li class="nav-item">
+
+                                
                                 <Link class="nav-link active" to="/home">Home</Link>
                             </li>
                             
@@ -24,7 +26,6 @@ const NavegationBar = () => {
                             <li class="nav-item">
                                 <Link class="nav-link" to="/register">Register</Link>
                             </li>
-                            
                         </ul>
                     </div>
                 </div>
