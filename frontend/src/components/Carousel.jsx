@@ -5,9 +5,6 @@ import foto2 from '../images/foto2_carousel.jpeg';
 import foto3 from '../images/foto3_carousel.png';
 
 
-
-
-
 const Carousel = () => {
     return (
         <>
