@@ -14,11 +14,13 @@ const NavegationBar = () => {
                         <ul class="navbar-nav mx-auto">
 
                             <li class="nav-item">
-
-                                
                                 <Link class="nav-link active" to="/home">Home</Link>
                             </li>
                             
+                            <li class="nav-item">
+                                <Link class="nav-link" to="/register">About</Link>
+                            </li>
+
                             <li class="nav-item">
                                 <Link class="nav-link" to="/login">Login</Link>
                             </li>

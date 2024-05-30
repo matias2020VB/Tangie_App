@@ -4,7 +4,6 @@ import 'react-image-gallery/styles/css/image-gallery.css'
 import image4 from '../images/Inventory04.jpg';
 import image2 from '../images/Inventory2.jpg';
 import image3 from '../images/Inventory3.jpg';
-import './slider.css';
 
 function App() {
     const images = [
@@ -26,7 +25,8 @@ function App() {
         <div style={{width:"60vw",
                     height:"100px", 
                     margin: "auto", 
-                    padding:"5%",
+                    padding:"4%",
+                    
         }}>
             <h2 style={{textAlign:"center"}}>Inventory Management</h2>
             <ImageGallery items={images} 
@@ -34,6 +34,7 @@ function App() {
             showFullscreenButton={false}
             showThumbnails={true}
             showBullets={true}
+            
             />
         </div>
     );

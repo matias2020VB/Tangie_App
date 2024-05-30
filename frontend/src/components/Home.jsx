@@ -1,5 +1,7 @@
 import React from 'react'
-import Slider from './Slider.jsx'
+import Slider from '../components/Slider.jsx'
+import '../styles.css'
+
 const Home = () => {
   return (
     <>
