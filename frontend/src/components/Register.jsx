@@ -14,7 +14,7 @@ function Register() {
     const handleRegister = async (values) => {
         console.log(values)
         try {
-            const response = await axios.post("https://localhos:5000/auth/register", values)
+            const response = await axios.post('http://localhost:5000/auth/register', values)
             console.log(response.data);    
         }   catch (error) {
             console.error(error);
@@ -45,7 +45,7 @@ function Register() {
                                     placeholder="Matias"
                                     name='name'
                                 />
-                                <label htmlFor="floatingInput">Nombre</label>
+                                <label htmlFor="floatingInput">Ingresar Nombre</label>
                             </div>
 
                             <div className="form-floating">

@@ -4,8 +4,6 @@ auth = Blueprint('auth', __name__, url_prefix='/auth')
 
 @auth.route('/login', methods=['POST'])
 
-@auth.route('/register', methods=['POST'])
-
 def login():
     print("login del back")
     email = request.json.get('email')
@@ -14,6 +12,8 @@ def login():
     
     return jsonify({'message': 'correcto'}), 200
 
+
+@auth.route('/register', methods=['POST'])
 def register():
     print("register del back")
     name = request.json.get('name')
