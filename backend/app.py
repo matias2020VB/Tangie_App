@@ -5,6 +5,7 @@ from routes import auth
 app = Flask(__name__)
 CORS(app)
 
+
 app.register_blueprint(auth)
 
 
