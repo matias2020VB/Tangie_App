@@ -42,7 +42,7 @@ function Register() {
                                     type="text" 
                                     className="form-control" 
                                     id="floatingInput" 
-                                    placeholder="Florencia"
+                                    placeholder="Matias"
                                     name='name'
                                 />
                                 <label htmlFor="floatingInput">Nombre</label>
