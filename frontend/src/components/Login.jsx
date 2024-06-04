@@ -7,7 +7,7 @@ function Login() {
 
     const initialValues = {
         email:'',
-        password:''
+        password:'',
     }
     
     const handleLogin = async (values) => {
@@ -44,7 +44,7 @@ function Login() {
                         placeholder="name@example.com"
                         name='email'
                     />
-                    <label htmlFor="floatingInput">Correo</label>
+                    <label htmlFor="floatingInput">Ingresar usuario</label>
                     </div>
                     <div className="form-floating">
                     <Field 
@@ -54,7 +54,7 @@ function Login() {
                         placeholder="Password" 
                         name='password'
                     />
-                    <label htmlFor="floatingPassword">Contraseña</label>
+                    <label htmlFor="floatingPassword">Ingresar contraseña</label>
                     </div>
                     <button className="btn btn-primary w-100 py-2" type="submit" onClick={handleLogin}>Iniciar sesión</button>
                 </Form>
