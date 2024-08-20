@@ -52,8 +52,6 @@ const WeatherPanel = () => {
             <FormWeather newLocation={getLocation} /> {/* Formulario para ingresar la ubicación */}
             
             <CardWeather showData = {show} loadingData = {loading} weather = {weather} forecast = {forecast} /> 
-
-            
         </div>
     );
 };
