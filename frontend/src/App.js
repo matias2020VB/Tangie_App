@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { UserContext } from './context/UserContext';
 import  PublicRoutes  from "./routes/PublicRoutes";
 import  PrivateRoutes  from './routes/PrivateRoutes';
+// import FormWeather from './components/FormWeather';
 
 function App() {
   const [user, setUser] = useState({
@@ -18,9 +19,9 @@ function App() {
   return (
     <div>
       <UserContext.Provider value={{ user, setUser}}>
-        
         <NavegationBar/>
         <WeatherPanel/>
+
         <Routes>
           {
             user.logged ? (
