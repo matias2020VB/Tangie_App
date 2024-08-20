@@ -93,7 +93,7 @@ return (
                 </div>
 
             ):(
-                <h2 className="text-light">Sin datos</h2>
+                <h2 className="text-center text-black">Sin datos</h2>
             )
         }
 
