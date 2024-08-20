@@ -2,13 +2,14 @@ import React from 'react'
 import Spinner from './Spinner.jsx';
 
 const CardWeather = ({loadingData, showData, weather, forecast}) => {
-
+    // Obtenemos la fecha actual.
     var today = new Date();
     var day = today.getDate();
     var month = today.getMonth();
     var year = today.getFullYear();
     var date = day + '/' + month + '/' + year;
 
+    // Variables para las URLs de los iconos y fechas de previsión.
     var url = "";
     var iconUrl = ";"
 
@@ -20,10 +21,11 @@ const CardWeather = ({loadingData, showData, weather, forecast}) => {
     var forecastDate6 = "";
     var forecastDate9 = "";
 
+    // Mostramos el spinner mientras los datos se están cargando.
   if(loadingData){
     return <Spinner />;
   }
-
+    // Preparamos la visualizacion de los datos del clima y de la previsión a futuro, una vez validados los datos, son cargados y listos para mostrar.
     if(showData){
         url = "http://openweathermap.org/img/w/";
         iconUrl = url + weather.weather[0].icon + ".png"
@@ -32,6 +34,7 @@ const CardWeather = ({loadingData, showData, weather, forecast}) => {
         iconUrl6 = url + forecast.list[2].weather[0].icon + ".png"
         iconUrl9 = url + forecast.list[3].weather[0].icon + ".png"
 
+        // Damos un formato para la extraccion de los datos en fechas y horas para las previsiones de 3, 6 y 9 horas.
         forecastDate3 = forecast.list[1].dt_txt.substring(8, 10) + '/' + forecast.list[1].dt_txt.substring(5, 7) + '/' + forecast.list[1].dt_txt.substring(0, 4) + '/' + forecast.list[1].dt_txt.substring(11, 13);
         forecastDate6 = forecast.list[2].dt_txt.substring(8, 10) + '/' + forecast.list[2].dt_txt.substring(5, 7) + '/' + forecast.list[2].dt_txt.substring(0, 4) + '/' + forecast.list[2].dt_txt.substring(11, 13);
         forecastDate9 = forecast.list[3].dt_txt.substring(8, 10) + '/' + forecast.list[3].dt_txt.substring(5, 7) + '/' + forecast.list[3].dt_txt.substring(0, 4) + '/' + forecast.list[3].dt_txt.substring(11, 13);

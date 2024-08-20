@@ -2,21 +2,15 @@ import React from 'react'
 import { useState }  from 'react';
 
 const FormWeather = ({newLocation}) => {
-  
+  // Estado para almacenar la ciudad ingresada
   const [city, setCity] = useState("");
-
-  // Creamos la funcion onSubmit para ver si recogemos el dato del formulario.
+  // Creamos funcion onSubmit para ver si recogemos el dato del formulario.
   const onSubmit = (e) => {
-    // Prevenimos el comportamiento por defecto del formulario
-    e.preventDefault();
-    // Mostramos la ciudad
-    console.log(city);  // Aquí debes pasar city 
-    // Creo una condicion por si no se escribe ninguna ciudad en el formulario. (City = Variable de estado.)
+    e.preventDefault(); // previene la recarga de la pagina al enviar el formulario
+    console.log(city);
+    // Si no se ingresa una ciudad, no se realiza nada.
     if (city === "" || !city) return;
-
-    // En esta variable newLocation alojará a city que city es la ciudad que hemos incluido dentro de nuestro campo de entrada.
-    // y la estamos recogiendo con este prop donde este prop es una funcion que a su vez tiene el parametro
-    // que es el dato que necesitamos para poder hacer la llamada a la api y obtener la localizacion 
+    // llamamos a la funcion "newLocation" con la ciudad ingresada.
     newLocation(city);
   }
   
