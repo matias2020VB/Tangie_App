@@ -16,10 +16,6 @@ const NavegationBar = () => {
                             <li class="nav-item">
                                 <Link class="nav-link active" to="/home">Home</Link>
                             </li>
-                            
-                            <li class="nav-item">
-                                <Link class="nav-link" to="/register">About</Link>
-                            </li>
 
                             <li class="nav-item">
                                 <Link class="nav-link" to="/login">Login</Link>
@@ -27,6 +23,14 @@ const NavegationBar = () => {
                             
                             <li class="nav-item">
                                 <Link class="nav-link" to="/register">Register</Link>
+                            </li>
+
+                            {/* <li class="nav-item">
+                                <Link class="nav-link" to="/register">About</Link>
+                            </li> */}
+
+                            <li class="nav-item">
+                                <Link class="nav-link" to="/weather">Weather</Link>
                             </li>
                         </ul>
                     </div>

@@ -1,9 +1,14 @@
 import { Formik, Form, Field } from 'formik'
 import React from 'react'
 import axios from 'axios';
-
+import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2'
+import { useContext } from 'react';
+import { UserContext } from '../context/UserContext';
 
 function Register() {
+
+    const navigate = useNavigate();
 
     const initialValues = {
         name:'',
@@ -11,14 +16,35 @@ function Register() {
         password:'',
     }
     
+    const { setUser } = useContext(UserContext);
+
     const handleRegister = async (values) => {
-        console.log(values)
+        
+        console.log('estoy en handleRegister')
         try {
             const response = await axios.post('http://localhost:5000/auth/register', values)
-            console.log(response.data);    
-        }   catch (error) {
+            console.log(response.data);
+            Swal.fire({
+                title: "success",
+                text: "¡Registro Exitoso!",
+                icon: "success",
+                showConfirmButton: 'false',
+                timer: 1800,
+            })
+            setUser({
+                logged:true
+            })
+            navigate('/home')
+            
+        }catch(error) {
             console.error(error);
-
+            Swal.fire({
+                title: "error",
+                text: "¡Registro fallido!",
+                icon: "error",
+                showConfirmButton: 'false',
+                timer: 1800,
+            })
         }
     }
     // La logica del codigo va antes del return
