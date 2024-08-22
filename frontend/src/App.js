@@ -19,8 +19,7 @@ function App() {
   return (
     <div>
       <UserContext.Provider value={{ user, setUser}}>
-        <NavegationBar/>
-        <WeatherPanel/>
+        <NavegationBar />
 
         <Routes>
           {
@@ -30,6 +29,7 @@ function App() {
               <Route path='/*' element={<PublicRoutes />} />
             )
           }
+          <Route path='/weather' element={<WeatherPanel />} />
         </Routes>
       </UserContext.Provider>
     </div>
