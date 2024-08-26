@@ -7,7 +7,8 @@ class User(db.Model):
     name = db.Column(db.String(250))
     email = db.Column(db.String(250))
     password = db.Column(db.String(250))
-
+    role = db.Column(db.String(250))
+    
     def __str__(self):
         return (
             f'id: {self.id}, '

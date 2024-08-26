@@ -17,13 +17,16 @@ function Register() {
     }
     
     const { setUser } = useContext(UserContext);
-
     const handleRegister = async (values) => {
-        
         console.log('estoy en handleRegister')
         try {
             const response = await axios.post('http://localhost:5000/auth/register', values)
             console.log(response.data);
+
+            //variable proveniente del back
+            const {role} = response.data 
+            console.log('role', role)
+
             Swal.fire({
                 title: "success",
                 text: "¡Registro Exitoso!",
@@ -32,12 +35,14 @@ function Register() {
                 timer: 1800,
             })
             setUser({
-                logged:true
+                logged:true,
+                role: role,
             })
-            navigate('/home')
+            navigate('/panel')
+            //navigate('/home')
             
         }catch(error) {
-            console.error(error);
+            console.log(error);
             Swal.fire({
                 title: "error",
                 text: "¡Registro fallido!",
@@ -47,7 +52,8 @@ function Register() {
             })
         }
     }
-    // La logica del codigo va antes del return
+    
+    // Siempre la logica del codigo va antes del return
     return (
         <div>
             <div className="news_section layout_padding">

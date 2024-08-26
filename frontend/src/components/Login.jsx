@@ -1,10 +1,10 @@
 import { Field, Form, Formik } from 'formik'
-import React from 'react'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2'
 import { useContext } from 'react';
 import { UserContext } from '../context/UserContext';
+// import '../assets/css/App.css';
 
 function Login() {
 
@@ -21,24 +21,37 @@ function Login() {
         console.log(values)
         try {
             const response = await axios.post('http://localhost:5000/auth/login', values)
-            console.log(response.data);    
+            console.log(response.data);
+            const { role } = response.data
+            
             Swal.fire({
                 title: "success",
                 text: "Login Exitoso!",
-                icon: "question",
+                icon: "success",
                 showConfirmButton: 'false',
                 timer: 1800,
             })
             setUser({
-                logged:true
+                logged:true,
+                role: role,
             })
-            navigate('/home')
-
+            navigate('/panel')
+            //navigate('/home')
         }   catch (error) {
-            console.error(error);
+            console.log(error);
+            console.log('Estoy en catch')
+            Swal.fire({
+                title: "Error",
+                text: "No se ha podido iniciar sesión",
+                icon: "error",
+                showConfirmButton: false,
+                timer: 1800,
+            })
 
         }
     } 
+    
+    
     return (
         <div>
             <div className="news_section layout_padding">
