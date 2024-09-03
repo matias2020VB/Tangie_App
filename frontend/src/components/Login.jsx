@@ -39,7 +39,7 @@ function Login() {
             //navigate('/home')
         }   catch (error) {
             console.log(error);
-            console.log('Estoy en catch')
+            console.error('Estoy en catch')
             Swal.fire({
                 title: "Error",
                 text: "No se ha podido iniciar sesión",

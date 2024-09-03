@@ -42,7 +42,7 @@ function Register() {
             //navigate('/home')
             
         }catch(error) {
-            console.log(error);
+            console.error(error);
             Swal.fire({
                 title: "error",
                 text: "¡Registro fallido!",

@@ -15,5 +15,6 @@ class User(db.Model):
             f'name: {self.name}, '
             f'email: {self.email}, '
             f'password: {self.password}'
+            f'role: {self.role}'
         )
 
